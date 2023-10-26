@@ -34,7 +34,7 @@ jobs:
           path: rules
       - name: Upload OCI artifacts to GitHub packages
         run: |
-          tools/falcoctl/falcoctl registry push \
+          (pwd && ls -la) && tools/falcoctl/falcoctl registry push \
           --config /dev/null \
           --type rulesfile \
           --version ${OCI_ARTIFACT_VERSION} \
