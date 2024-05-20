@@ -1,2 +1,5 @@
 - list: falco_binaries
   items: [falcoctl]
+
+- macro: open_file_failed
+  condition: (evt.type in (open,openat,openat2) and fd.typechar='f' and fd.num=-1 and evt.res startswith E)
